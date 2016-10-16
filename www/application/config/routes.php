@@ -41,6 +41,13 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+$route['auth/signin'] = 'AuthController/signin';
+$route['auth/signup'] = 'AuthController/signup';
+$route['auth/forgotpassword'] = 'welcome/wip';
+
+$route['lists'] = 'welcome/wip';
+
+$route['command/migrate'] = 'Command/migrate';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
