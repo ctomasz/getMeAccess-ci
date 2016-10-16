@@ -45,7 +45,12 @@ $route['auth/signin'] = 'AuthController/signin';
 $route['auth/signup'] = 'AuthController/signup';
 $route['auth/forgotpassword'] = 'welcome/wip';
 
-$route['lists'] = 'welcome/wip';
+$route['lists'] = 'ListController';
+$route['list/create'] = 'ListController/create';
+$route['list/store'] = 'ListController/store';
+$route['list/destroy/:num'] = 'ListController/destroy';
+$route['list/show/(:num)'] = 'ListController/show/$1';
+$route['list/request'] = 'welcome/wip';
 
 $route['command/migrate'] = 'Command/migrate';
 

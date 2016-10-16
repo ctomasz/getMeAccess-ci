@@ -21,5 +21,14 @@ class Factory
         return $CI->userRepo;
     }
 
+    public static function listRepo()
+    {
+        $CI =& get_instance();
+        $CI->load->library('Repositories/List_ci_repo', null,'listRepo');
+
+        return $CI->listRepo;
+    }
+
+
 
 }
