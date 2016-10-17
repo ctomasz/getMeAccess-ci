@@ -40,9 +40,23 @@ class List_ci_repo
         return $this->CI->db->delete('lists',['id' => (int)$id]);
     }
 
+    /**
+     * @param int $id
+     * @return array|null
+     */
     public function getDetails($id)
     {
         $query = $this->CI->db->get_where('lists',['id' => (int)$id], 1);
+        return ( $query->num_rows() > 0 ) ? current($query->result()) : null;
+    }
+
+    /**
+     * @param int $id
+     * @return array|null
+     */
+    public function first($id)
+    {
+        $query = $this->CI->db->get_where('lists', ['id' => (int)$id], 1);
         return ( $query->num_rows() > 0 ) ? current($query->result()) : null;
     }
 }

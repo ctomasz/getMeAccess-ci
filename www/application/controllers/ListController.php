@@ -45,12 +45,13 @@ class ListController extends CI_Controller {
 
     public function show($id)
     {
-        if( null === $item =  $this->listRepo->getDetails($id)){
+        if( null === $list =  $this->listRepo->getDetails($id)){
             redirect('lists');
         }
-
-        $data['item'] = $item;
-        $this->load->view('lists/list', $data);
+        $itemRepo = Factory::itemRepo();
+        $data['items'] = $itemRepo->getItemsForList($id);
+        $data['list'] = $list;
+        $this->load->view('items/items', $data);
     }
 
     public function destroy($id)

@@ -52,6 +52,12 @@ $route['list/destroy/:num'] = 'ListController/destroy';
 $route['list/show/(:num)'] = 'ListController/show/$1';
 $route['list/request'] = 'welcome/wip';
 
+$route['item/create/(:num)'] = 'ItemController/create/$1';
+$route['item/store'] = 'ItemController/store';
+$route['item/show/(:num)'] = 'ItemController/show/$1';
+$route['item/edit/(:num)'] = 'ItemController/edit/$1';
+$route['item/save'] = 'ItemController/save';
+
 $route['command/migrate'] = 'Command/migrate';
 
 /* End of file routes.php */
