@@ -3,7 +3,9 @@
         <h3><?=$item->name;?></h3>
     </div>
     <div class="panel-body">
+        <pre>
         <?=$item->content;?>
+            </pre>
     </div>
     <div class="panel-footer text-right">
         [Created: <?=$item->created_at?>] | [Updated: <?=$item->updated_at?>]

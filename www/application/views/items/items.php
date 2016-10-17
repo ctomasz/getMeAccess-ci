@@ -27,7 +27,7 @@
                             <tr>
                                 <td><?=$item->name ?></td>
                                 <td class="text-right">
-                                    <a href="<?=site_url(['item/show', $item->id])?>" class="btn btn-primary">show credentials</a>
+                                    <a href="<?=site_url(['item/show', $item->id])?>" data-item="<?=$item->id;?>" class="btn btn-primary show-credentials">show credentials</a>
                                     <a href="<?=site_url(['item/edit', $item->id])?>" class="btn btn-danger">edit</a>
                                 </td>
                             </tr>
@@ -53,5 +53,15 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="content-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 <?php include(__DIR__.'/../footer.php'); ?>
