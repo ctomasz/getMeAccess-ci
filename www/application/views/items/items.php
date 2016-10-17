@@ -38,10 +38,15 @@
                     <div class="panel-footer">
                         <strong>Logs:</strong>
                         <table class="table table-striped">
+                            <?php foreach( $logs as $log) {?>
                             <tr>
-                                <td class="col-xs-3" nowrap>[2222-22-22 22:22:22]</td>
-                                <td class="col-xs-9 text-left">sss</td>
+                                <td class="col-xs-3" nowrap>[<?=$log->created_at;?>]</td>
+                                <td class="col-xs-3"><?=$log->member;?></td>
+                                <td class="col-xs-3"><?=$log->action;?></td>
+                                <td class="col-xs-3"><?=$log->item_id;?></td>
+
                             </tr>
+                            <?php } ?>
                         </table>
                     </div>
                 </div>

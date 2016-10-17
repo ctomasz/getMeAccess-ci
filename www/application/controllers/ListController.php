@@ -48,8 +48,10 @@ class ListController extends CI_Controller {
         if( null === $list =  $this->listRepo->getDetails($id)){
             redirect('lists');
         }
-        $itemRepo = Factory::itemRepo();
-        $data['items'] = $itemRepo->getItemsForList($id);
+        $itemData = Factory::itemRepo()->getItemsForList($id);
+        $data['items'] = $itemData['items'];
+        $data['logs'] = $itemData['logs'];
+
         $data['list'] = $list;
         $this->load->view('items/items', $data);
     }

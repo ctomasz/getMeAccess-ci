@@ -48,7 +48,7 @@ $route['auth/forgotpassword'] = 'welcome/wip';
 $route['lists'] = 'ListController';
 $route['list/create'] = 'ListController/create';
 $route['list/store'] = 'ListController/store';
-$route['list/destroy/:num'] = 'ListController/destroy';
+$route['list/destroy/(:num)'] = 'ListController/destroy/$1';
 $route['list/show/(:num)'] = 'ListController/show/$1';
 $route['list/request'] = 'welcome/wip';
 

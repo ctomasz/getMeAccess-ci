@@ -10,7 +10,7 @@ class Item_model extends CI_Model
 
     /**
      * @param array $arr
-     * @return bool
+     * @return bool|id
      */
     public function create(Array $arr)
     {
@@ -20,7 +20,8 @@ class Item_model extends CI_Model
             $date = Date('Y-m-d H:i:s');
         $this->created_at = $date;
         $this->updated_at = $date;
-        return $this->db->insert('items', $this);
+        return $this->db->insert('items', $this) ? $this->db->insert_id() : false;
+
     }
 
     public function update(Array $arr)

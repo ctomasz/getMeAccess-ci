@@ -31,10 +31,14 @@ class Factory
 
     public static function itemRepo()
     {
-        $CI =& get_instance();
-        $CI->load->library('Repositories/Item_ci_repo', null,'itemRepo');
+        require_once __DIR__.'/Repositories/Item_ci_repo.php';
+        return  new Item_ci_repo( self::logRepo() );
+    }
 
-        return $CI->itemRepo;
+    public static function logRepo()
+    {
+        require_once __DIR__.'/Repositories/Log_ci_repo.php';
+        return new Log_ci_repo( self::auth() );
     }
 
 

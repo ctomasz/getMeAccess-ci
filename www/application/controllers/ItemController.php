@@ -49,6 +49,7 @@ class ItemController extends CI_Controller {
         if( null === $item =  $this->itemRepo->first($id)){
             redirect('lists');
         }
+        Factory::logRepo()->itemOpened($id);
 
         $data['item'] = $item;
         $this->load->view('items/item', $data);

@@ -20,6 +20,11 @@ class Auth
         ];
     }
 
+    public function user()
+    {
+        return $this->session->userdata('user');
+    }
+
     /**
      * @return boolean
      */
